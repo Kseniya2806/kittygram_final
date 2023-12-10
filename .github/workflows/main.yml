@@ -17,9 +17,9 @@ jobs:
       postgres:
         image: postgres:13.10
         env:
-          POSTGRES_USER: django_user
-          POSTGRES_PASSWORD: django_password
-          POSTGRES_DB: django_db
+          POSTGRES_USER: kittygram_user
+          POSTGRES_PASSWORD: kittygram_password
+          POSTGRES_DB: kittygram
           SECRET_KEY: ${{ secrets.SECRET_KEY }}
           DEBUG: ${{ secrets.DEBUG }}
           ALLOWED_HOSTS: ${{ secrets.ALLOWED_HOSTS }}
@@ -40,9 +40,9 @@ jobs:
         pip install -r ./backend/requirements.txt
     - name: Test with flake8 and django tests
       env:
-        POSTGRES_USER: django_user
-        POSTGRES_PASSWORD: django_password
-        POSTGRES_DB: django_db
+        POSTGRES_USER: kittygram_user
+        POSTGRES_PASSWORD: kittygram_password
+        POSTGRES_DB: kittygram
         DB_HOST: 127.0.0.1
         DB_PORT: 5432
         SECRET_KEY: ${{ secrets.SECRET_KEY }}
