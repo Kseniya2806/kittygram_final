@@ -8,8 +8,6 @@ services:
   db:
     image: postgres:13
     env_file: .env
-    ports:
-      - 5433:5432
     volumes:
       - pg_data_production_kit:/var/lib/postgresql/data/
   backend:
