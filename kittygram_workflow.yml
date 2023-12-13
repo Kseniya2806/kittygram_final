@@ -18,16 +18,16 @@ jobs:
         ports:
           - 5432:5432
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
-#    strategy:
-#      matrix:
-#       python-version: ["3.9", "3.10"]
+    strategy:
+      matrix:
+        python-version: ["3.9", "3.10"]
     steps:
     - name: Check out code
       uses: actions/checkout@v3
     - name: Set up Python
       uses: actions/setup-python@v4
       with:
-        python-version: 3.9
+        python-version: ${{ matrix.python-version }}
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -175,4 +175,6 @@ jobs:
       with:
         to: ${{ secrets.TELEGRAM_TO }}
         token: ${{ secrets.TELEGRAM_TOKEN }}
-        message: Деплой, отправленный (github.actor) с коммитом (github.event.commits[0].message), успешно выполнен!
+        message: |
+          Деплой, отправленный ${{ github.actor }} с коммитом ${{ github.event.commits[0].message }}, успешно выполнен!
+          Ссылка на коммит: https://github.com/${{ github.repository }}/commit/${{ github.sha }}
