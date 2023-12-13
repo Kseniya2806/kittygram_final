@@ -33,4 +33,3 @@ services:
       - 9000:80
     volumes:
       - static_volume_kit:/staticfiles/
-      - media_kittygram:/media
