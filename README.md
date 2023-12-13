@@ -1,7 +1,7 @@
 # Kittygram
 ## Спринт 16: Проект Kittygram
 
-[![Main Kittygram workflow](https://github.com/Kseniya2806/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/andprov/kittygram/actions/workflows/main.yml)
+[![Main Kittygram workflow](https://github.com/Kseniya2806/kittygram_final/actions/workflows/main.yml/badge.svg)](https://github.com/Kseniya2806/kittygram_final/actions/workflows/main.yml)
 
 ## **Описание проекта**
 
