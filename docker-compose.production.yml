@@ -3,6 +3,7 @@ version: '3'
 volumes:
   pg_data_production_kit:
   static_volume_kit:
+  media:
 
 services:
   db:
@@ -17,6 +18,7 @@ services:
       - db
     volumes:
       - static_volume_kit:/backend_static/
+      - media:/media
   frontend:
     env_file: .env
     image: kseniya2806/kittygram_frontend
@@ -33,3 +35,4 @@ services:
       - 9000:80
     volumes:
       - static_volume_kit:/staticfiles/
+      - media:/media
